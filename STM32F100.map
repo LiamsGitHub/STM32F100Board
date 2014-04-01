@@ -166,13 +166,17 @@ OUTPUT(STM32F100.elf elf32-littlearm)
                                          0x71 (size before relaxing)
  .comment       0x0000000000000000       0x71 Objects/main.o
 
-.debug_info     0x0000000000000000       0xcb
- .debug_info    0x0000000000000000       0x61 Objects/Initialize.o
- .debug_info    0x0000000000000061       0x6a Objects/main.o
+.debug_info     0x0000000000000000       0xdb
+ .debug_info    0x0000000000000000       0x67 Objects/Initialize.o
+ .debug_info    0x0000000000000067       0x74 Objects/main.o
 
-.debug_abbrev   0x0000000000000000       0xc5
+.debug_abbrev   0x0000000000000000       0xc7
  .debug_abbrev  0x0000000000000000       0x5c Objects/Initialize.o
- .debug_abbrev  0x000000000000005c       0x69 Objects/main.o
+ .debug_abbrev  0x000000000000005c       0x6b Objects/main.o
+
+.debug_loc      0x0000000000000000       0x89
+ .debug_loc     0x0000000000000000       0x3e Objects/Initialize.o
+ .debug_loc     0x000000000000003e       0x4b Objects/main.o
 
 .debug_aranges  0x0000000000000000       0x40
  .debug_aranges
@@ -180,14 +184,14 @@ OUTPUT(STM32F100.elf elf32-littlearm)
  .debug_aranges
                 0x0000000000000020       0x20 Objects/main.o
 
-.debug_line     0x0000000000000000       0xd3
- .debug_line    0x0000000000000000       0x63 Objects/Initialize.o
- .debug_line    0x0000000000000063       0x70 Objects/main.o
+.debug_line     0x0000000000000000       0xd7
+ .debug_line    0x0000000000000000       0x67 Objects/Initialize.o
+ .debug_line    0x0000000000000067       0x70 Objects/main.o
 
-.debug_str      0x0000000000000000      0x115
- .debug_str     0x0000000000000000      0x101 Objects/Initialize.o
- .debug_str     0x0000000000000101       0x14 Objects/main.o
-                                         0xeb (size before relaxing)
+.debug_str      0x0000000000000000       0xca
+ .debug_str     0x0000000000000000       0xb6 Objects/Initialize.o
+ .debug_str     0x00000000000000b6       0x14 Objects/main.o
+                                         0xa0 (size before relaxing)
 
 .debug_frame    0x0000000000000000       0x48
  .debug_frame   0x0000000000000000       0x24 Objects/Initialize.o
