@@ -11,6 +11,9 @@ local.properties
 .settings/
 .loadpath
 .project
+.elf
+.lst
+.map
 
 # External tool builders
 .externalToolBuilders/
