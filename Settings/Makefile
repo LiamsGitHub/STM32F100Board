@@ -14,7 +14,7 @@ ARMGNULaptop = /Users/liamg/Documents/gcc-arm-none-eabi-4_8-2013q4/bin/
 LINKER_SCRIPT = Settings/STM32F100C8.ld
 
 # Compiler/Assembler/Linker Paths
-PATH = 	$(ARMGNULaptop)arm-none-eabi-
+PATH = 	$(ARMGNUMini)arm-none-eabi-
 
 CC = 	$(PATH)gcc
 AS = 	$(PATH)as
