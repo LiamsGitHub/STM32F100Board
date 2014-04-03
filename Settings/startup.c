@@ -1,9 +1,10 @@
 /*
  * startup.c
  *
- * This code is from Johan Simonsson's Mini Example project at http://fun-tech.se/stm32/OlimexBlinky/mini.php
- * Demonstrates initialization using C instead of the usual assembly
+ * This code is adapted from Johan Simonsson's Mini Example project at http://fun-tech.se/stm32/OlimexBlinky/mini.php
+ * Demonstrates startup using C instead of the usual assembly
  * Adjusted to work with my Linker file and Makefile targeting the STM32F100C8
+ * Did not bother to set up NVIC
  *  Created on: Mar 29, 2014
  *      Author: Liam
  */

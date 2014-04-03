@@ -1,7 +1,8 @@
  /******************************************************************************
  *	Startup for STM32F100C8
  *	Based on code from STDiscovery adjusted to target specifically STM32F100C8 with complete set of vectors
- *  Targets Eclipse Kepler
+ *  Targets Eclipse Kepler.
+ * Did not bother to set up NVIC
  *
  * @date      04/16/2010. Updated 29 March 2014 by LG for STM32F100C8 with specific vectors on Eclipse Kepler
  *

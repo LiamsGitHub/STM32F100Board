@@ -1,3 +1,13 @@
+/*
+ * initialize.c
+ *
+ * This code is called from startup.s or startup.c
+ * Sets clock selection and PLL for STM32F100C8
+ *  Created on: Mar 29, 2014
+ *      Author: Liam
+ */
+
+
 #include "Headers/STM32F100.h"
 void SystemInit(void);
 

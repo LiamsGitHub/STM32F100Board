@@ -8,7 +8,6 @@
 
 int main(void)
 {
-	//SetClock();
 
   // First switch on power to the GPIO unit. Allocate pin29 to MCO clock and pin30 to toggled port
   RCC_APB2ENR= 0x4; // Start clock to GPIO port A

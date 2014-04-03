@@ -1,7 +1,6 @@
 ######################################
 # For STM32F100C8 on Kepler Eclipse using the ARM GNU toolchain
-# Adapted from STDiscovery example.
-# Supports both the assembler and C startup code examples
+# Supports both the assembler and C startup code stubs
 # Liam Goudge March 2014
 
 # Project Name
