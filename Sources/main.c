@@ -3,11 +3,13 @@
 // Liam Goudge March 2014
 
 #include "Headers/STM32F100.h"
+#include <stdio.h>
 
 
 
 int main(void)
 {
+	printf("Hello World \n");
 
   // First switch on power to the GPIO unit. Allocate pin29 to MCO clock and pin30 to toggled port
   RCC_APB2ENR= 0x4; // Start clock to GPIO port A
