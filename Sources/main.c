@@ -3,7 +3,7 @@
 // Liam Goudge March 2014
 
 #include "Headers/STM32F100.h"
-#include <stdio.h>
+#include "/Users/liamg/Documents/gcc-arm-none-eabi-4_8-2013q4/arm-none-eabi/include/stdio.h"
 
 
 

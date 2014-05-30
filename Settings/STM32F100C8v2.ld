@@ -27,9 +27,9 @@ SECTIONS {
 
 	.data :
 	{
-		_start_data = .;
+		__data_start__ = .;
 		*(.data)				/* Data memory */
-		_end_data = .;
+		__data_end__ = .;
 	} >SRAM AT >FLASH
 
     _start_data_flash = LOADADDR(.data);
@@ -38,17 +38,17 @@ SECTIONS {
 
 	.bss :
 	{
-		_start_bss = .;
+		__bss_start__ = .;
 		*(.bss)				/* Zero-filled run time allocate data memory */
-		_end_bss = .;
+		__bss_end__ = .;
 	} >SRAM
 
 	. = ALIGN(4);
 
-	_start_stack = .;
-	_end_stack = ORIGIN(STACK);
+	__stack_start__ = .;
+	__stack_end__ = ORIGIN(STACK);
 }
 
-_end = .;
+__end__ = .;
 PROVIDE(end = .);
 

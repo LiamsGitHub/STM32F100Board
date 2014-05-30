@@ -25,11 +25,11 @@
 .global  Default_Handler
 
 /***** Memory map addresses defined in the linker script */
-.word  _start_data_flash		/* start address for the initialization values of the .data section.*/
-.word  _start_data				/* start address for the .data section.*/
-.word  _end_data				/* end address for the .data section.*/
-.word  _start_bss				/* start address for the .bss section.*/
-.word  _end_bss					/* end address for the .bss section.*/
+.word  _start_data_flash			/* start address for the initialization values of the .data section.*/
+.word  __data_start__				/* start address for the .data section.*/
+.word  __data_end__					/* end address for the .data section.*/
+.word  __bss_start__				/* start address for the .bss section.*/
+.word  __bss_end__					/* end address for the .bss section.*/
 
 
 /* Handler for Reset exception. Initializes BSS */
@@ -49,12 +49,12 @@ CopyDataInit:
   adds  r1, r1, #4
     
 LoopCopyDataInit:
-  ldr   r0, =_start_data
-  ldr   r3, =_end_data
+  ldr   r0, =__data_start__
+  ldr   r3, =__data_end__
   adds  r2, r0, r1
   cmp   r2, r3
   bcc   CopyDataInit
-  ldr   r2, =_start_bss
+  ldr   r2, =__bss_start__
   b     LoopFillZerobss
 /* Zero fill the bss segment. */  
 FillZerobss:
@@ -62,7 +62,7 @@ FillZerobss:
   str   r3, [r2], #4
     
 LoopFillZerobss:
-  ldr   r3, = _end_bss
+  ldr   r3, = __bss_end__
   cmp   r2, r3
   bcc   FillZerobss
 
@@ -96,7 +96,7 @@ Infinite_Loop:
   .size  g_pfnVectors, .-g_pfnVectors
 
 g_pfnVectors:
-.word _end_stack
+.word __stack_end__
 .word Reset_Handler
 .word NMI_Handler
 .word HardFault_Handler

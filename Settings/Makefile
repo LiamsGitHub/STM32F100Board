@@ -10,7 +10,7 @@ PROJECT = STM32F100
 INCLUDES = -I./
 ARMGNUMini = /Users/Liam/Documents/gcc-arm-none-eabi-4_7-2013q3/bin/
 ARMGNULaptop = /Users/liamg/Documents/gcc-arm-none-eabi-4_8-2013q4/bin/
-LINKER_SCRIPT = Settings/STM32F100C8.ld
+LINKER_SCRIPT = Settings/STM32F100C8v2.ld
 
 # Compiler/Assembler/Linker Paths
 PATH = 	$(ARMGNULaptop)arm-none-eabi-
@@ -26,20 +26,20 @@ OBJDIR = Objects
 
 ################### Compiler and Linker Settings #####################
 OPT = -Os -g
+SEMIHOST = --specs=nano.specs --specs=rdimon.specs -lc -lc -lrdimon
 
 # Compiler Options
 CFLAGS = -fno-common -mcpu=cortex-m3 -mthumb
 CFLAGS += $(OPT) $(DEBUG) $(INCLUDES)
-CFLAGS += -Wall -Wextra
-CFLAGS += -Wcast-align -Wcast-qual -Wimplicit -Wpointer-arith -Wswitch -Wredundant-decls -Wreturn-type -Wshadow -Wunused -c
+CFLAGS += -Wall -Wextra -c
 
 # Linker options
-LDFLAGS = -mcpu=cortex-m3 -mthumb $(OPT) -nostartfiles -Wl,-Map=$(PROJECT).map -T$(LINKER_SCRIPT) -nostdlib
+#LDFLAGS = -mcpu=cortex-m3 -mthumb $(OPT) -nostartfiles -Wl,-Map=$(PROJECT).map -T$(LINKER_SCRIPT) -nostdlib
+LDFLAGS = -mcpu=cortex-m3 -mthumb $(OPT) $(SEMIHOST) -Wl,-Map=$(PROJECT).map -T$(LINKER_SCRIPT)
 
 # Assembler options
 ASFLAGS = -mcpu=cortex-m3 -mthumb
 
-CPFLAGS = -Obinary
 ODFLAGS = -h --syms -S
 
 REMOVE = rm -f
@@ -66,6 +66,7 @@ all:
 	@ echo " "
 	@ echo "Symbol table:"
 	$(NM) $(PROJECT).elf
+	#$(NM) $(OBJDIR)/rdimon-crt0.o
 	
 	@ echo " "
 	@ echo "Cleaning up:"
